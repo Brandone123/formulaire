@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<meta chaster="UTF-8">
+	<title>Formulaire1</title>
+	<Script language='javascript'>
+		function CalculerMontantTTC()
+		{
+			if (isNaN(Form1.ht.value) == true)
+		{
+			alert('Merci de saisir un montant correct. Calcul impossible.');
+			Form1.ht.value = '0';
+		}
+			else
+		{
+			Form1.tva.value = (Form1.ht.value / 100) * 19.6 ;
+			Form1.ttc.value = Number(Form1.ht.value) + Number(Form1.tva.value) ;
+		}
+		}
+	</Script>
+	<script type='text.javascript'>
+		public static void main(String[] args)
+		{      
+		    int valeurATrouver=5;
+		    int [] T={1,4,5};
+		    boolean contain=recherche(T, valeurATrouver) ;
+		     
+		    if(contain){System.out.println("La valeur "+valeurATrouver+" est comprise dans le tableau");}
+		    else{System.out.println("La valeur "+valeurATrouver+" n'est pas comprise dans le tableau");}
+		 
+		}
+		     
+		static boolean recherche(int[] T,int valeurATrouver)
+		{
+		    for(int i=0;i<T.length;i++)
+		    {
+		    if(T[i]==valeurATrouver)
+		    {
+		        return true;
+		    }
+		    }
+		    return false;
+		}
+	</script>
+</head>
+<body>
+	<h2>Formulaire</h2>
+		<h3>Le site est gratuit et ouvert a tous</h3><b/>
+		<script type="text/javascript" language="javascript">
+		d = new Date();
+		document.write(d.toLocaleDateString()+'  '+d.toLocaleTimeString()+'.');
+		</script> 
+	<form action="" method="post" id="formulaire" name="formulaire">
+	<table>
+	<tr>
+		<th>Prenom : </th>
+		<td>
+			<input type="text" name="pseudo" />
+		</td>
+	</tr>
+	<tr>
+		<th>Nom de la famille  :</th>
+		<td>
+			<input type="text" name="famille" />
+		</td>
+	</tr>
+	<tr>
+		<th>Votre Adresse electronique : </th>
+		<td>
+			<input type="text" name="Adresse" value="nom@domaine" />
+		</td>
+	</tr>
+	<tr>
+		<th>Nouveau mot de passe : </th>
+		<td><input type="password" name="NMP" class="NMP" />
+		</td>
+	</tr><hr/>
+	<tr>
+		<th>je suis : </th>
+		<td><select name="sexe" id="sexe">
+			<option>homme</option>
+			<option>Femme</option>
+			</select> 
+		</td>
+	</tr>
+	<tr>
+		<th>Date de naissance : </th>
+		<td><input type="number" name="quantity" min="1" max="31" />
+			<select name="month" id="bdaymonth">
+				<option>Janvier</option>
+				<option>decembre</option>
+			</select>
+			<input type="number" name="quantity" min="1800" max="9999"/>
+		</td>
+	</tr>
+	<tr onLoad='CalculerMontantTTC()'>
+		<th>Calcul de la taxe :</th>
+		<td><br>
+			<div id='bloc'>
+				<FORM Name='Form1'>
+				Montant hors taxes :<input type='text' Name='ht' onKeyUp='CalculerMontantTTC()' Value='0'>
+				<br>
+				Montant TVA (19.6%) :<input type ='text' Name='tva'>
+				<br>
+				Montant TTC :<input type ='text' Name='ttc'>
+				</FORM>
+			</div>
+		</td>
+	</tr>
+</table>
+	<a href=""><h4>Pourquoi dois-je fournir ces informations?</h4></a>
+	<input type="submit" name="Inscription" value="SEND" align="center" />
+</form>
+</body>
+</html>
